@@ -1,2 +1,8 @@
 [tool.black]
 line-length = 120
+
+[tool.pytest.ini_options]
+# `colcon test` runs pytest from the package root; keep it to test/. Collecting the
+# whole checkout would import the library, which needs the full learning stack, and
+# the scripts/ directory expects datasets and configured paths.
+testpaths = ["test"]

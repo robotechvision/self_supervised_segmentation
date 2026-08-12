@@ -42,6 +42,27 @@ conda activate stego
 pip install -e .
 ```
 
+#### As a ROS 2 package
+
+The repository is also an `ament_python` package named `stego`, so a ROS 2
+workspace can build it with colcon instead of pip installing it. That is how the
+[Wild Visual Navigation](https://github.com/leggedrobotics/wild_visual_navigation)
+ROS 2 node consumes it -- it declares `stego` as a dependency, so colcon builds
+this package first:
+```
+cd ~/ros2_ws/src
+git clone https://github.com/leggedrobotics/self_supervised_segmentation.git
+./self_supervised_segmentation/models/download_pretrained.sh
+cd ~/ros2_ws && colcon build --symlink-install
+```
+colcon installs no Python dependencies, it only expects them to be importable, so
+the environment above (or the equivalent set of pip packages) is still needed.
+
+Prefer `--symlink-install`. The pre-trained weights are looked up under `models/`
+relative to the installed package, so a build that copies the package out of the
+checkout cannot find them; set `STEGO_ROOT_DIR` to a directory holding `models/`
+if you do install that way.
+
 ### Download datasets
 
 Download general datasets used by Hamilton et al.:
