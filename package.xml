@@ -23,6 +23,12 @@
   <exec_depend>python3-scipy</exec_depend>
   <exec_depend>python3-matplotlib</exec_depend>
   <exec_depend>python3-yaml</exec_depend>
+  <exec_depend>python3_kornia</exec_depend>
+  <exec_depend>python3_omegaconf</exec_depend>
+  <exec_depend>python3_torchmetrics</exec_depend>
+  <exec_depend>python3_pytorch_lightning</exec_depend>
+  <exec_depend>python3_pydensecrf</exec_depend>
+  <exec_depend>python3_wandb</exec_depend>
   <!-- Not available through rosdep, install with pip: torch, torchvision, kornia,
        omegaconf, pytorch_lightning, torchmetrics, pydensecrf, wandb. A plain
        `pip install -e .` on this repository pulls them all in; colcon installs

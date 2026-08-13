@@ -12,7 +12,7 @@ import numpy as np
 import pydensecrf.densecrf as dcrf
 import pydensecrf.utils as utils
 import torchvision.transforms.functional as VF
-from kornia.core import Tensor
+from torch import Tensor
 from kornia.core.check import KORNIA_CHECK, KORNIA_CHECK_SHAPE
 
 from stego.utils import unnorm, sample, super_perm, norm, tensor_correlation
